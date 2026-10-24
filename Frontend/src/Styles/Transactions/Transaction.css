@@ -1,0 +1,556 @@
+.transaction-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #edf5f0;
+  color: #153c30;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.transaction-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 32px;
+  background: linear-gradient(180deg, #006b50 0%, #004d3a 100%);
+  border: 1px solid #dcebe2;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 77, 58, 0.16);
+}
+
+.transaction-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.transaction-brand > span:last-child > span {
+  font-weight: 400;
+}
+
+.transaction-brand-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #00d9a6;
+  color: #004d3a;
+  font-size: 27px;
+}
+
+.transaction-heading {
+  margin: 40px 0 28px;
+}
+
+.transaction-eyebrow {
+  margin: 0 0 12px;
+  color: #8ff5d5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.transaction-heading h1,
+.transaction-confirmation h2 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: clamp(28px, 6vw, 36px);
+  letter-spacing: -1.2px;
+}
+
+.transaction-description {
+  color: #d1e9df;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.transaction-card form > label {
+  display: block;
+  margin: 18px 0 9px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.transaction-input,
+.transaction-amount-input {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 14px;
+  border: 1px solid #c8e2d6;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #173d30;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.transaction-input:focus,
+.transaction-amount-input:focus-within {
+  border-color: #00d9a6;
+  box-shadow: 0 0 0 3px rgba(0, 217, 166, 0.2);
+}
+
+.transaction-input::placeholder,
+.transaction-amount-input input::placeholder {
+  color: #8a9c91;
+}
+
+.transaction-amount-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.transaction-amount-input > span {
+  color: #006b50;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.transaction-amount-input input {
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #173d30;
+  font: inherit;
+  font-size: 16px;
+}
+
+.transaction-primary,
+.transaction-secondary {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.transaction-primary {
+  margin-top: 24px;
+  border: none;
+  background: #00d9a6;
+  color: #003f30;
+}
+
+.transaction-primary:hover {
+  background: #00efb5;
+}
+
+.transaction-primary:active {
+  transform: scale(0.99);
+}
+
+.transaction-primary:disabled,
+.transaction-secondary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.transaction-secondary {
+  margin-top: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #ffffff;
+}
+
+.transaction-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.transaction-error {
+  margin: 12px 0 0;
+  color: #ffe0dc;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.transaction-security {
+  margin: 24px 0 0;
+  color: #d1e9df;
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Transfer confirmation */
+
+.transaction-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 20px;
+  background: rgba(7, 30, 21, 0.7);
+}
+
+.transaction-confirmation {
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  border: 1px solid #dcebe2;
+  border-radius: 20px;
+  background: #006b50;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.transaction-confirmation h2 {
+  font-size: 25px;
+}
+
+.confirmation-amount {
+  margin: 24px 0;
+  color: #8ff5d5;
+  font-size: 30px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.transaction-info span {
+  color: #d1e9df;
+  font-size: 12px;
+}
+
+.transaction-info strong {
+  color: #ffffff;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+/* Success screen */
+
+.transaction-success-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: #00d9a6;
+  color: #004d3a;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.transaction-card:has(.transaction-success-icon) {
+  text-align: center;
+}
+
+.success-amount {
+  margin: 24px 0;
+  color: #8ff5d5;
+  font-size: 32px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .transaction-page {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .transaction-card {
+    margin: auto 0;
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .transaction-confirmation {
+    padding: 24px;
+  }
+}
+
+.review-amount-card {
+  margin: 24px 0;
+  padding: 26px 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #00d9a6, #8ff5d5);
+  color: #004d3a;
+  text-align: center;
+}
+
+.review-amount-card > span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.review-amount-card h2 {
+  margin: 14px 0;
+  font-size: clamp(28px, 6vw, 36px);
+  letter-spacing: -1px;
+  overflow-wrap: anywhere;
+}
+
+.review-details {
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+}
+
+.review-total {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.review-total strong {
+  color: #8ff5d5;
+  font-size: 16px;
+}
+
+.review-confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 22px;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.review-confirm input {
+  margin-top: 3px;
+  accent-color: #00d9a6;
+  flex-shrink: 0;
+}
+
+.review-mpin-label {
+  display: block;
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.review-mpin-input {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  outline-color: #00d9a6;
+  background: rgba(0, 0, 0, 0.12);
+  color: #ffffff;
+  font: inherit;
+  letter-spacing: 0.35em;
+}
+
+.transaction-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.receipt-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 32px;
+  border-radius: 22px;
+  background: #ffffff;
+  color: #173d30;
+  box-shadow: 0 15px 45px rgba(0, 77, 58, 0.12);
+}
+
+.receipt-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #006b50;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.receipt-brand > span:last-child > span {
+  font-weight: 400;
+}
+
+.receipt-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #00d9a6;
+  color: #004d3a;
+  font-size: 26px;
+}
+
+.receipt-heading {
+  margin: 32px 0 24px;
+}
+
+.receipt-heading h1 {
+  margin: 16px 0 8px;
+  font-size: 26px;
+  letter-spacing: -0.8px;
+}
+
+.receipt-subtitle {
+  color: #7b8980;
+  font-size: 13px;
+}
+
+.receipt-status {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #fff4dc;
+  color: #946100;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.receipt-status.completed {
+  background: #e2f8f0;
+  color: #008b68;
+}
+
+.receipt-amount {
+  padding: 24px 16px;
+  border-radius: 16px;
+  background: #e9faf3;
+  text-align: center;
+}
+
+.receipt-amount span {
+  color: #53796a;
+  font-size: 13px;
+}
+
+.receipt-amount h2 {
+  margin: 12px 0 0;
+  color: #006b50;
+  font-size: clamp(27px, 6vw, 36px);
+  overflow-wrap: anywhere;
+}
+
+.receipt-details {
+  margin-top: 22px;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 15px 0;
+  border-bottom: 1px solid #edf1ed;
+}
+
+.receipt-row span {
+  flex-shrink: 0;
+  color: #7b8980;
+  font-size: 12px;
+}
+
+.receipt-row strong {
+  max-width: 62%;
+  color: #173d30;
+  font-size: 12px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.receipt-disclaimer {
+  margin: 22px 0;
+  color: #7b8980;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.receipt-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.receipt-actions .transaction-primary,
+.receipt-actions .transaction-secondary {
+  margin-top: 0;
+}
+
+.receipt-error {
+  color: #c0392b;
+  line-height: 1.6;
+}
+
+@media print {
+  @page {
+    margin: 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+  }
+
+  .transaction-page {
+    display: block;
+    min-height: auto;
+    padding: 0;
+    background: #ffffff !important;
+  }
+
+  .receipt-card {
+    max-width: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .receipt-amount,
+  .receipt-status,
+  .receipt-brand-icon {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+@media (max-width: 480px) {
+  .receipt-card {
+    padding: 24px;
+  }
+
+  .receipt-row {
+    gap: 10px;
+  }
+}

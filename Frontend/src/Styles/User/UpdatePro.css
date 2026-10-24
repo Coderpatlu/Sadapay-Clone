@@ -1,0 +1,28 @@
+.profile-success {
+  margin: 12px 0 0;
+  color: #a8ffdf;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.profile-cancel {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-cancel:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}

@@ -1,0 +1,278 @@
+/* Bottom navigation */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  min-height: 76px;
+  padding: 10px 24px;
+  background: #ffffff;
+  border-top: 1px solid #e4ebe6;
+  box-sizing: border-box;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.navbar-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #64746a;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.navbar-item:focus-visible,
+.navbar-logout:focus-visible {
+  outline: 2px solid #008b68;
+  outline-offset: 4px;
+}
+
+.navbar-logout {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #64746a;
+  font: inherit;
+  cursor: pointer;
+}
+
+.navbar-logout:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.navbar i {
+  font-size: 22px;
+  margin: 0;
+}
+
+.navbar-item span,
+.navbar-logout span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.navbar-item.active {
+  color: #008b68;
+}
+
+/* Payment bottom sheet */
+.payment {
+  position: fixed;
+  bottom: 76px;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 20px 20px 0 0;
+  background: #ffffff;
+  box-shadow: 0 -8px 30px rgba(0, 77, 58, 0.12);
+}
+
+.more-menu {
+  position: fixed;
+  bottom: 76px;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 20px 20px 0 0;
+  background: #ffffff;
+  box-shadow: 0 -8px 30px rgba(0, 77, 58, 0.12);
+}
+
+.more-menu h2 {
+  margin: 0;
+  color: #174a39;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.more-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.more-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid #e4ebe6;
+  background: transparent;
+  color: #173d30;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.more-menu-item:last-child {
+  border-bottom: 0;
+}
+
+.more-menu-item:focus-visible {
+  outline: 2px solid #008b68;
+  outline-offset: 2px;
+}
+
+.more-menu-icon {
+  display: grid;
+  flex: 0 0 46px;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: #e2f8f0;
+  color: #008b68;
+  font-size: 18px;
+}
+
+.more-menu-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.more-menu-copy strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.more-menu-copy > span {
+  color: #7b8980;
+  font-size: 12px;
+}
+
+.more-menu-chevron {
+  color: #87918a;
+  font-size: 13px !important;
+}
+
+.more-menu-item.destructive,
+.more-menu-item.destructive .more-menu-chevron {
+  color: #c24135;
+}
+
+.more-menu-item.destructive .more-menu-icon {
+  background: #fff0ec;
+  color: #c24135;
+}
+
+/* Use this class when the panel should be hidden */
+.payment.hidden {
+  display: none;
+}
+
+.payment h1 {
+  margin: 0;
+  color: #174a39;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.pay-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.pay-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 0 0 16px;
+  margin: 0;
+  border-bottom: 1px solid #e4ebe6;
+  box-sizing: border-box;
+}
+
+.pay-card:last-child {
+  border-bottom: none;
+}
+
+.pay-card .icons {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #e2f8f0;
+  color: #008b68;
+  font-size: 22px;
+}
+
+.pay-card h2 {
+  margin: 0;
+  color: #173d30;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.pay-card p {
+  margin: 5px 0 0;
+  color: #7b8980;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 16px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .payment {
+    padding: 20px;
+  }
+
+  .more-menu {
+    padding: 20px;
+  }
+}

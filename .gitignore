@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Local environment files; keep safe templates in Git
+.env
+.env.*
+!.env.example
+*.env
+
+# Build and test output
+dist/
+build/
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Tool caches
+.cache/
+.vite/
+.turbo/
+
+# Temporary and editor files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# VS Code local settings
+.vscode/
