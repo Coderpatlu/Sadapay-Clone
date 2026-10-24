@@ -28,6 +28,15 @@ test("signup validates an invalid mobile number", async ({ page }) => {
   await expect(page).toHaveURL("/register");
 });
 
+test("login links to registration", async ({ page }) => {
+  await page.goto("/login");
+
+  await page.getByRole("link", { name: "Register" }).click();
+
+  await expect(page).toHaveURL("/register");
+  await expect(page.getByTestId("signup-form")).toBeVisible();
+});
+
 test("signup keeps the form and displays duplicate-account errors", async ({
   page,
   api,

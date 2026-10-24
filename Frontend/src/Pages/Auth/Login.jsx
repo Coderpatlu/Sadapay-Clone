@@ -315,6 +315,10 @@ const Login = () => {
           </p>
 
           <p className="login-terms">
+            Don't have an account? <Link to="/register">Register</Link>
+          </p>
+
+          <p className="login-terms">
             By continuing, you agree to our{" "}
             <Link to="/terms">Terms of Service</Link> and{" "}
             <Link to="/privacy">Privacy Policy</Link>.
