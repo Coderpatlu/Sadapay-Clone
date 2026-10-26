@@ -6,6 +6,14 @@ const ErrorMiddleware = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "error";
 
+  if (err.name === "DatabaseConnectionError") {
+    return res.status(503).json({
+      success: false,
+      status: "error",
+      message: "Service temporarily unavailable. Please try again.",
+    });
+  }
+
   // MONGOOSE DUPLICATION
   if (err.code === 11000) {
     err.statusCode = 409;

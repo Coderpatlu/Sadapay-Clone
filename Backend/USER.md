@@ -66,6 +66,8 @@ The backend reads these environment variable **names**. Values are intentionally
 
 `OTP_EXPIRY_MINUTES` defaults to 5 in code. The frontend dev server proxies `/api` to `http://localhost:4000` in [`../Frontend/vite.config.js`](../Frontend/vite.config.js). Do not put secret values in this document or client-side code.
 
+For Vercel, configure `DB_URI` and `JWT_SECRET` in the backend project's Environment Variables for each deployment environment; a local `Backend/.env` file is ignored by Git and is not deployed. `DB_URI` must point to the intended Atlas cluster/database, and Atlas must allow network access from the deployment. The API waits for MongoDB before handling requests and returns a generic 503 if the connection is unavailable; server logs classify connection failures without logging the URI or credentials. The frontend calls the relative `/api/...` path, so production hosting must route that path to this backend on the same site. If frontend and backend use separate origins, verify the deployment's API routing, CORS, and cookie configuration manually.
+
 ## 4. User Model and Schema
 
 [`Src/Models/UserModel.js`](./Src/Models/UserModel.js) defines the `User` collection. Fields and behavior:

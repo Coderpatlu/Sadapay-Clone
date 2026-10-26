@@ -13,7 +13,14 @@ app.use(cookieParser());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-connectDb();
+app.use(async (req, res, next) => {
+  try {
+    await connectDb();
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
 
 app.use("/api/user", userRoute);
 app.use("/api/wallet", walletRoute);
